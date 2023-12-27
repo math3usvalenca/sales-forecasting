@@ -1,6 +1,6 @@
 import pickle
 import pandas as pd
-from flask import Flask, request, Response
+from flask import Flask, request, Response, render_template
 from Rossmann import Rossmann
 import os
 
@@ -10,8 +10,11 @@ model = pickle.load( open(os.path.join(os.getcwd(),'model/model_rossmann.pkl'), 
 # initialize API
 app = Flask( __name__ )
 
+
 @app.route( '/rossmann/predict', methods=['POST'] )
 def rossmann_predict():
+    
+    
     test_json = request.get_json()
    
     if test_json:

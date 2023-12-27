@@ -1,5 +1,6 @@
 Flask                        
 Gunicorn
+plotly
 numpy                         
 requests                      
 scikit-learn                  
